@@ -5,7 +5,8 @@ Backend documentation for the MerchQuest FastAPI service.
 ## Contents
 
 ### Setup
-- [Backend setup](setup/backend.md) — local dev, env vars, running the server, running tests
+- [Backend setup](setup/backend.md) — local dev, env vars, running the server
+- [Testing](setup/testing.md) — unit tests (32, no DB) and integration tests (48, real PostgreSQL)
 
 ### Architecture
 - [Architecture overview](architecture.md) — system diagram, component roles, request flow

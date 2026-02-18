@@ -53,12 +53,14 @@ Interactive docs: `http://localhost:8000/docs`
 
 ## 5. Run the tests
 
-The test suite uses `pytest-asyncio` and `httpx`. No database connection is required — all DB calls are mocked.
+See **[Testing](testing.md)** for full details on both test suites.
+
+Quick start (unit tests only — no database required):
 
 ```bash
 cd frontend/backend
 source .venv/bin/activate
-python -m pytest tests/ -v
+python -m pytest tests/ --ignore=tests/integration -v
 ```
 
 Expected output: **32 passed** in ~0.1s.
@@ -91,7 +93,17 @@ frontend/backend/
     ├── test_vendors.py
     ├── test_vendor_stock.py
     ├── test_merch_stock.py
-    └── test_delegates.py
+    ├── test_delegates.py
+    └── integration/
+        ├── conftest.py
+        ├── test_int_auth.py
+        ├── test_int_coins.py
+        ├── test_int_balance.py
+        ├── test_int_checkout.py
+        ├── test_int_vendors.py
+        ├── test_int_vendor_stock.py
+        ├── test_int_merch_stock.py
+        └── test_int_delegates.py
 ```
 
 ## Key dependencies
