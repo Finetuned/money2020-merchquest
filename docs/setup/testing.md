@@ -125,7 +125,7 @@ TEST_DATABASE_URL="postgresql://localhost/merchquest_test" \
   python -m pytest tests/ -v
 ```
 
-Expected output: **80 passed** (32 unit + 48 integration).
+Expected output: **91 passed** (43 unit + 50 integration + 2 infra).
 
 ---
 
@@ -143,7 +143,7 @@ python -m pytest tests/ --ignore=tests/integration --cov --cov-report=term-missi
 
 | Suite | Statements | Missed | Coverage |
 |-------|-----------|--------|----------|
-| Unit tests only | 256 | 24 | **91%** |
+| Unit tests only | 256 | 0 | **100%** |
 
 ### Integration test coverage
 
@@ -154,7 +154,7 @@ TEST_DATABASE_URL="postgresql://localhost/merchquest_test" \
 
 | Suite | Statements | Missed | Coverage |
 |-------|-----------|--------|----------|
-| Integration tests only | 256 | 12 | **95%** |
+| Integration tests only | 256 | 0 | **100%** |
 
 ### Combined coverage with HTML report
 
@@ -165,7 +165,7 @@ TEST_DATABASE_URL="postgresql://localhost/merchquest_test" \
 
 | Suite | Statements | Missed | Coverage |
 |-------|-----------|--------|----------|
-| All tests (80) | 256 | 12 | **95%** |
+| All tests (91) | 256 | 0 | **100%** |
 
 The HTML report is written to `frontend/backend/htmlcov/index.html`. Open it in a browser:
 
@@ -176,20 +176,20 @@ open frontend/backend/htmlcov/index.html   # macOS
 
 ### Per-file breakdown (combined run)
 
-| File | Stmts | Miss | Cover | Uncovered lines |
-|------|-------|------|-------|-----------------|
-| `database.py` | 7 | 1 | 86% | 14 |
-| `dependencies.py` | 51 | 6 | 88% | 9–10, 15–17, 111 |
-| `main.py` | 21 | 3 | 86% | 19–21 |
-| `models.py` | 8 | 0 | **100%** | — |
-| `routers/auth.py` | 17 | 0 | **100%** | — |
-| `routers/balance.py` | 12 | 0 | **100%** | — |
-| `routers/checkout.py` | 16 | 0 | **100%** | — |
-| `routers/coins.py` | 31 | 2 | 94% | 79–86 |
-| `routers/delegates.py` | 29 | 0 | **100%** | — |
-| `routers/merch_stock.py` | 23 | 0 | **100%** | — |
-| `routers/vendor_stock.py` | 20 | 0 | **100%** | — |
-| `routers/vendors.py` | 21 | 0 | **100%** | — |
-| **TOTAL** | **256** | **12** | **95%** | |
+| File | Stmts | Miss | Cover |
+|------|-------|------|-------|
+| `database.py` | 7 | 0 | **100%** |
+| `dependencies.py` | 51 | 0 | **100%** |
+| `main.py` | 21 | 0 | **100%** |
+| `models.py` | 8 | 0 | **100%** |
+| `routers/auth.py` | 17 | 0 | **100%** |
+| `routers/balance.py` | 12 | 0 | **100%** |
+| `routers/checkout.py` | 16 | 0 | **100%** |
+| `routers/coins.py` | 31 | 0 | **100%** |
+| `routers/delegates.py` | 29 | 0 | **100%** |
+| `routers/merch_stock.py` | 23 | 0 | **100%** |
+| `routers/vendor_stock.py` | 20 | 0 | **100%** |
+| `routers/vendors.py` | 21 | 0 | **100%** |
+| **TOTAL** | **256** | **0** | **100%** |
 
 > `htmlcov/` and `.coverage` are excluded from git via `.gitignore`.
