@@ -2,3 +2,6 @@
 	path = frontend
 	url = git@github.com:danhodgkins/money2020_MerchQuest.git
 	branch = dev
+[submodule "memory-bank"]
+	path = memory-bank
+	url = git@github.com:Finetuned/money2020-merchquest-memorybank.git
