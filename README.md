@@ -137,6 +137,19 @@ Open `frontend/unity/m2020merch/` in Unity 6 with URP. The project targets mobil
 
 ---
 
+## Documentation
+
+Full backend documentation is in [`docs/`](docs/README.md):
+
+- [Architecture overview](docs/architecture.md)
+- [Database schema](docs/database.md)
+- [Backend setup](docs/setup/backend.md)
+- [API reference](docs/api/README.md)
+- [Explainers](docs/explainers/qr-codes.md) — QR codes, auth sessions, balance model, delegate validation, checkout flow
+- [Deployment guide](docs/deployment.md)
+
+---
+
 ## API Reference
 
 | Environment | Base URL |
