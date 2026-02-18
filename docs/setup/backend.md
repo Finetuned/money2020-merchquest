@@ -51,7 +51,28 @@ uvicorn main:app --reload
 The API will be available at `http://localhost:8000`.
 Interactive docs: `http://localhost:8000/docs`
 
-## 5. Run the tests
+## 5. Lint the code
+
+The backend uses [pylint](https://pylint.readthedocs.io/) configured in `frontend/backend/.pylintrc`.
+
+```bash
+cd frontend/backend
+source .venv/bin/activate
+pylint database.py dependencies.py main.py models.py routers/
+```
+
+Expected output: **Your code has been rated at 10.00/10**
+
+Key configuration choices (see `.pylintrc`):
+
+| Setting | Value | Reason |
+|---------|-------|--------|
+| `max-line-length` | 120 | Matches FastAPI project conventions |
+| `missing-function-docstring` | disabled | Endpoints are self-documenting via route paths |
+| `missing-class-docstring` | disabled | Pydantic models need no docstring |
+| `argument-rgx` | `[a-z_][a-zA-Z0-9_]*$` | Allows camelCase query params (e.g. `vendorID`) that must match the API contract |
+
+## 7. Run the tests
 
 See **[Testing](testing.md)** for full details on both test suites.
 
@@ -65,7 +86,7 @@ python -m pytest tests/ --ignore=tests/integration -v
 
 Expected output: **32 passed** in ~0.1s.
 
-## 6. Project structure
+## 8. Project structure
 
 ```
 frontend/backend/
